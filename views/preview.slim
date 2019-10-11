@@ -1,0 +1,26 @@
+h1.my-4= 'プレビュー：' + @post.title
+
+table.table.table-hover
+  tbody
+    tr
+      th タイトル
+      td= @post.title
+    tr
+      th カテゴリー
+      td= @category_name
+    tr
+      th サムネイル
+      td
+        img.img-fluid width="300" height="150" src="/img/#{@post.thumbnail}"
+
+div
+  == markdown(@post.body)
+
+form method="post" action="/article_post"
+  input type="hidden" name="csrf_token" value="#{@csrf_token}"
+  input type="hidden" name="title"       value="#{@post.title}"
+  input type="hidden" name="body"        value="#{@post.body}"
+  input type="hidden" name="category_id" value="#{@post.category_id}"
+  input type="hidden" name="thumbnail"   value="#{@post.thumbnail}"
+  input.btn.btn-primary.mr-2 type="submit" value="修正" name="back"
+  input.btn.btn-primary      type="submit" value="投稿"

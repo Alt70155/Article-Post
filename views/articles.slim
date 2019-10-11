@@ -1,0 +1,26 @@
+h1.my-4= @post.title
+
+table.table.table-hover
+  tbody
+    tr
+      th 記事番号
+      td= @post.id
+    tr
+      th タイトル
+      td= @post.title
+    tr
+      th カテゴリー
+      td= @category_name
+    tr
+      th サムネイル
+      td
+        img.img-fluid width="300" height="150" src="/img/#{@post.thumbnail}"
+    tr
+      th 投稿日時
+      td= @post.created_at
+    tr
+      th 更新日時
+      td= @post.updated_at
+
+div
+  == markdown(@post.body)

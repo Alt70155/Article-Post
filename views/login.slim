@@ -1,0 +1,11 @@
+h1.my-3 ログイン
+
+form method="post" action="/login"
+  input type="hidden" name="csrf_token" value="#{@csrf_token}"
+  .form-group
+    label for="user_name" ユーザーネーム
+    input#user_name.form-control type="text" name="name"
+  .form-group
+    label for="password" パスワード
+    input#password.form-control type="password" name="password"
+  input.btn.btn-primary.mt-3 type="submit" value="ログイン" name="submit"

@@ -1,0 +1,7 @@
+development:
+  adapter: mysql2
+  database: article4
+  host: localhost
+  username: root
+  password:
+  encoding: utf8

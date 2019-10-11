@@ -1,0 +1,18 @@
+h1.my-3 記事一覧
+
+table.table.table-hover
+  thead.thead-default
+    tr
+      th サムネイル
+      th タイトル
+      th 投稿日
+      th カテゴリー
+  tbody
+    - @posts.each do |post|
+        tr
+          td
+            img src="img/#{post.thumbnail}" width="200px" height="150px"
+          td
+            a href="articles/#{post.id}" = post.title
+          td= post.created_at
+          td= Category.find(post.category_id).name

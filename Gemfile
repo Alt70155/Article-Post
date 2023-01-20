@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-gem 'activerecord', '~> 5.2'
+gem 'activerecord', '~> 6.1'
 gem 'bcrypt'
 gem 'mysql2'
 gem 'rake'
